@@ -69,7 +69,7 @@ function viewAds($lid = 0)
     $tempXoopsLocal                          = new \XoopsLocal();
     $GLOBALS['xoopsOption']['template_main'] = 'adslight_item.tpl';
     require_once XOOPS_ROOT_PATH . '/header.php';
-    require_once XOOPS_ROOT_PATH . '/include/comment_view.php';
+    //require_once XOOPS_ROOT_PATH . '/include/comment_view.php';
     $lid  = ((int)$lid > 0) ? (int)$lid : 0;
     $rate = ('1' == $GLOBALS['xoopsModuleConfig']['adslight_rate_item']) ? '1' : '0';
     $GLOBALS['xoopsTpl']->assign('rate', $rate);
@@ -312,7 +312,7 @@ function viewAds($lid = 0)
         if ($price > 0) {
             $GLOBALS['xoopsTpl']->assign('price', '<strong>' . _ADSLIGHT_PRICE2 . '</strong>' . $price . ' ' . $GLOBALS['xoopsModuleConfig']['adslight_currency_symbol'] . ' - ' . $typeprice);
             $GLOBALS['xoopsTpl']->assign('price_head', _ADSLIGHT_PRICE2);
-            //      $GLOBALS['xoopsTpl']->assign('price_price', $price.' '.$GLOBALS['xoopsModuleConfig']['adslight_currency_symbol'].' ');
+            $GLOBALS['xoopsTpl']->assign('price_price', $price.' '.$GLOBALS['xoopsModuleConfig']['adslight_currency_symbol'].' ');
 
             $GLOBALS['xoopsTpl']->assign('price_price', Adslight\Utility::getMoneyFormat('%.2n', $price));
 
@@ -495,6 +495,7 @@ switch ($pa) {
         $GLOBALS['xoopsOption']['template_main'] = 'adslight_item.tpl';
 
         viewAds($lid);
+        require_once XOOPS_ROOT_PATH . '/include/comment_view.php';
         break;
 }
 require_once XOOPS_ROOT_PATH . '/footer.php';
