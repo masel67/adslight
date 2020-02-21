@@ -69,7 +69,7 @@ function viewAds($lid = 0)
     $tempXoopsLocal                          = new \XoopsLocal();
     $GLOBALS['xoopsOption']['template_main'] = 'adslight_item.tpl';
     require_once XOOPS_ROOT_PATH . '/header.php';
-    require_once XOOPS_ROOT_PATH . '/include/comment_view.php';
+    //require_once XOOPS_ROOT_PATH . '/include/comment_view.php';
     $lid  = ((int)$lid > 0) ? (int)$lid : 0;
     $rate = ('1' == $GLOBALS['xoopsModuleConfig']['adslight_rate_item']) ? '1' : '0';
     $GLOBALS['xoopsTpl']->assign('rate', $rate);
@@ -496,6 +496,7 @@ switch ($pa) {
         $GLOBALS['xoopsOption']['template_main'] = 'adslight_item.tpl';
 
         viewAds($lid);
+        require_once XOOPS_ROOT_PATH . '/include/comment_view.php';
         break;
 }
 require_once XOOPS_ROOT_PATH . '/footer.php';
