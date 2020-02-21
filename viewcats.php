@@ -331,7 +331,8 @@ function adsView($cid, $min, $orderby, $show = 0)
             $a_item['status'] = $status;
             if ($price > 0) {
                 //          $a_item['price'] = $price. ' '. $GLOBALS['xoopsModuleConfig']['adslight_currency_symbol'].'';
-                $a_item['price']           = Adslight\Utility::getMoneyFormat('%.2n', $price);
+                $a_item['price']           = $price . ' ' . $GLOBALS['xoopsModuleConfig']['adslight_currency_symbol'] . '';
+                //$a_item['price']           = Adslight\Utility::getMoneyFormat('%.2n', $price);
                 $a_item['price_typeprice'] = $myts->htmlSpecialChars($nom_price);
             }
             $a_item['date']  = $date;
