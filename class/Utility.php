@@ -484,12 +484,12 @@ class Utility
             $options['width']  = $width;
             $options['height'] = $height;
             if ($isAdmin) {
-                $myEditor = new \XoopsFormEditor(ucfirst($name), $GLOBALS['xoopsModuleConfig']['adslightAdminUser'], $options, $nohtml = false, $onfailure = 'textarea');
+                $myEditor = new \XoopsFormEditor(_ADSLIGHT_DESC, $GLOBALS['xoopsModuleConfig']['adslightAdminUser'], $options, $nohtml = false, $onfailure = 'textarea');
             } else {
-                $myEditor = new \XoopsFormEditor(ucfirst($name), $GLOBALS['xoopsModuleConfig']['adslightEditorUser'], $options, $nohtml = false, $onfailure = 'textarea');
+                $myEditor = new \XoopsFormEditor(_ADSLIGHT_DESC, $GLOBALS['xoopsModuleConfig']['adslightEditorUser'], $options, $nohtml = false, $onfailure = 'textarea');
             }
         } else {
-            $myEditor = new \XoopsFormDhtmlTextArea(ucfirst($name), $name, $value, '100%', '100%');
+            $myEditor = new \XoopsFormDhtmlTextArea(_ADSLIGHT_DESC, $name, $value, '100%', '100%');
         }
 
         //        $form->addElement($descEditor);
